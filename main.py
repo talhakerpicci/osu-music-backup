@@ -20,9 +20,9 @@ def move_output_file_to_folder(song_path,destined_path):
 	os.rename(song_path,destined_path)
 
 def main():
-	songs = get_song_names(r'D:\Progam Files\osu!\Songs')
-	write_songs_to_file('songs.txt',songs)
-	move_output_file_to_folder('songs.txt', r'C:\Users\Talha\Google Drive\Notes\songs.txt')
+	songs = get_song_names('enter the path of songs')
+	write_songs_to_file('enter the output name with txt extension',songs)
+	move_output_file_to_folder('same thing above', r'enter google drive folder path')
 
 if __name__ == '__main__':
 	main()
