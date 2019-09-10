@@ -19,10 +19,17 @@ def get_song_names(path):
 def move_output_file_to_folder(song_path,destined_path):
 	os.rename(song_path,destined_path)
 
+def delete_previous_files(path):
+	try:
+		os.remove(path)
+	except Exception as e:
+		pass		
+
 def main():
-	songs = get_song_names('enter the path of songs')
+	songs = get_song_names(r'enter the path of songs')
 	write_songs_to_file('enter the output name with txt extension',songs)
-	move_output_file_to_folder('same thing above', r'enter google drive folder path')
+	delete_previous_files(r'enter the location of existing folder')
+	move_output_file_to_folder('songs.txt', r'enter google drive folder path')
 
 if __name__ == '__main__':
 	main()
