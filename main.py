@@ -25,11 +25,15 @@ def delete_previous_files(path):
 	except Exception as e:
 		pass		
 
+def start_backup_and_sync(path):
+	os.startfile(path)
+
 def main():
-	songs = get_song_names(r'enter the path of songs')
-	write_songs_to_file('enter the output name with txt extension',songs)
-	delete_previous_files(r'enter the location of existing folder')
-	move_output_file_to_folder('songs.txt', r'enter google drive folder path')
+	songs = get_song_names(r'D:\Progam Files\osu!\Songs')
+	write_songs_to_file('songs.txt',songs)
+	delete_previous_files(r'C:\Users\Google Drive\Notes\songs.txt')
+	move_output_file_to_folder('songs.txt', r'C:\Users\Google Drive\Notes\songs.txt')
+	start_backup_and_sync(r'C:\Program Files\Google\Drive\googledrivesync.exe')
 
 if __name__ == '__main__':
 	main()
